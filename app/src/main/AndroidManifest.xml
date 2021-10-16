@@ -4,19 +4,20 @@
     package="com.example.myapplication">
 
     <application
+        android:name=".main.DonationApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DonationActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activities.DonationActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReportActivity"
+        <activity android:name=".activities.ReportActivity"
             tools:ignore="MissingClass">
         </activity>
     </application>

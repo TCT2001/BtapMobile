@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Donate">
 
-    <item android:id="@+id/menuSetting"
-        android:title="@string/menuSetting"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:onClick="settings"/>
     <item
         android:id="@+id/menuReport"
+        android:onClick="report"
         android:orderInCategory="100"
         android:title="@string/menuReport"
-        app:showAsAction="never"
-        android:onClick="report"/>
+        app:showAsAction="never" />
     <item
-        android:id="@+id/menuDonation"
+        android:id="@+id/menuDonate"
+        android:onClick="donate"
         android:orderInCategory="100"
-        android:title="@string/menuDonation"
-        app:showAsAction="never"
-        android:onClick="donate"/>
+        android:title="@string/menuDonate"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuReset"
+        android:onClick="reset"
+        android:orderInCategory="100"
+        android:title="@string/menuReset"
+        app:showAsAction="never" />
 </menu>
