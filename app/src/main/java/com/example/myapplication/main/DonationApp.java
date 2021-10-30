@@ -7,10 +7,13 @@ import android.widget.Toast;
 import com.example.myapplication.database.DBManager;
 import com.example.myapplication.models.Donation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DonationApp extends Application {
     public final int target = 10000;
     public int totalDonated = 0;
-    //public List <Donation> donations    = new ArrayList<Donation>();
+    //public List<Donation> donations = new ArrayList<Donation>();
     public DBManager dbManager;
 
 

@@ -11,23 +11,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.myapplication.R;
 import com.example.myapplication.models.Donation;
 
 import java.util.List;
 
-public class ReportActivity extends BaseActivity implements AdapterView.OnItemClickListener
-{
+public class ReportActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     ListView listView;
     DonationAdapter adapter;
+
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         listView = findViewById(R.id.reportList);
-        adapter = new DonationAdapter(this,  app.dbManager.getAll());
+        adapter = new DonationAdapter(this, app.dbManager.getAll());
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
     }
@@ -42,25 +45,22 @@ public class ReportActivity extends BaseActivity implements AdapterView.OnItemCl
     }
 }
 
-class DonationAdapter extends ArrayAdapter<Donation>
-{
+class DonationAdapter extends ArrayAdapter<Donation> {
     private final Context context;
     public List<Donation> donations;
 
-    public DonationAdapter(Context context, List<Donation> donations)
-    {
+    public DonationAdapter(Context context, List<Donation> donations) {
         super(context, R.layout.row_donate, donations);
-        this.context   = context;
+        this.context = context;
         this.donations = donations;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View     view       = inflater.inflate(R.layout.row_donate, parent, false);
-        Donation donation   = donations.get(position);
+        View view = inflater.inflate(R.layout.row_donate, parent, false);
+        Donation donation = donations.get(position);
         TextView amountView = view.findViewById(R.id.row_amount);
         TextView methodView = view.findViewById(R.id.row_method);
 
@@ -71,8 +71,7 @@ class DonationAdapter extends ArrayAdapter<Donation>
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return donations.size();
     }
 }
